@@ -9,6 +9,10 @@
 //! \returns 0 if successful, 1 if unable to seek to desired line.
 extern int escl_file_set_line(FILE* file, int dst_line_n);
 
-extern int escl_file_get_line_length(FILE* file);
+//! \brief Find the character length of a given line within the provided file.
+//! \param file The FILE* to evaluate
+//! \param line_n The desired line number.
+//! \returns length of current line
+extern int escl_file_get_line_length(FILE* file, int line_n);
 
 #endif
