@@ -9,4 +9,6 @@
 //! \returns 0 if successful, 1 if unable to seek to desired line.
 extern int escl_file_set_line(FILE* file, int dst_line_n);
 
+extern int escl_file_get_line_length(FILE* file);
+
 #endif
