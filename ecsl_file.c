@@ -23,3 +23,33 @@ int escl_file_set_line(FILE* file, int dst_line_n)
   }
   return errors;
 }
+
+int escl_file_get_line_length(FILE* file, int line_n)
+{
+  int length = 0;
+  // Retrieve starting position.
+  int starting_position = ftell(file);
+  // Seek to the desired line.
+  if (escl_file_set_line(file, line_n) == 0)
+  {
+    char c = fgetc(file);
+    if (c == EOF)
+    {
+      printf("Error: escl_file_get_line_length() has reached an invalid character or EOF.\n");
+    }
+    else
+    {
+      while(c != EOF && c != '\n')
+      {
+        c = fgetc(file);
+        ++length;
+      }
+    } 
+  }
+  else
+  {
+    printf("Error: escl_file_get_line_length() unable to find desired line.\n");
+  }
+  fseek(file, starting_position, SEEK_SET);
+  return length;
+}
