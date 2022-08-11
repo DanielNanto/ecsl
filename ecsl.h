@@ -5,9 +5,3 @@
 #include "ecsl_str.h"
 
 #endif
-
-
-
-ECSL
-ECSL
-
