@@ -1,5 +1,6 @@
 #include "ecsl_file.h"
 
+
 int escl_file_set_line(FILE* file, int dst_line_n)
 {
   int errors = 0;
@@ -13,6 +14,11 @@ int escl_file_set_line(FILE* file, int dst_line_n)
     {
       ++line_counter;
     }
+  }
+  if (line_counter != dst_line_n)
+  {
+    printf("Error: escl_file_set_line() unable to seek to desired line\n");
+    errors = 1;
   }
   return errors;
 }
