@@ -1,2 +1,2 @@
-# csla
-C Standard Library Additional Functions
+# ecsl
+Expanded C Standard Library
