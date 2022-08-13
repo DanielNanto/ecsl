@@ -1,2 +1,2 @@
 # ecsl
-Expanded C Standard Library
+Extended C Standard Library
