@@ -53,3 +53,22 @@ int ecsl_file_get_line_length(FILE* file, int line_n)
   fseek(file, starting_position, SEEK_SET);
   return length;
 }
+
+char* ecsl_file_get_line_str(FILE* file, int line_n)
+{
+  int errors = 0;
+  int starting_position = ftell(file);
+  // Set 'cursor' to the beginning of line_n
+  file_set_cursor_to_line(file, line_n);
+  int length = file_get_line_length(file);
+  // Create a string large enough to contain the current line
+  char* tmp_str = (char*)calloc(1,sizeof(char) * (length+1));
+  // Find length of current line
+  int i = 0;
+  for (i = 0; i < length; i++)
+  {
+    tmp_str[i] = fgetc(file);
+  }
+  fseek(file, starting_position, SEEK_SET);
+  return tmp_str;
+}
