@@ -57,8 +57,9 @@ int ecsl_file_get_line_length(FILE* file, int line_n)
 char* ecsl_file_get_line_str(FILE* file, int line_n)
 {
   int errors = 0;
+  // Record the position of the 'cursor' before operating.
   int starting_position = ftell(file);
-  // Set 'cursor' to the beginning of line_n
+  // Set 'cursor' to the beginning of line_n.
   file_set_cursor_to_line(file, line_n);
   int length = file_get_line_length(file);
   // Create a string large enough to contain the current line
@@ -69,6 +70,7 @@ char* ecsl_file_get_line_str(FILE* file, int line_n)
   {
     tmp_str[i] = fgetc(file);
   }
+  // Return the 'cursor' to the recorded position before this operation.
   fseek(file, starting_position, SEEK_SET);
   return tmp_str;
 }
