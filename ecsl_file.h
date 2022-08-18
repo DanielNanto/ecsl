@@ -16,6 +16,8 @@ extern int ecsl_file_set_line(FILE* file, int line_n);
 extern int ecsl_file_get_line_length(FILE* file, int line_n);
 
 //! \brief Extract a string from the given line of a provided file.
+//! \brief WARNING: Please note that the returned char* points to memory
+//! \brief allocated through calloc(), and as such needs to be free'd.
 //! \param file The FILE* to evaluate.
 //! \param line_n The line number of a FILE* to be read.
 //! \returns the extracted string.
