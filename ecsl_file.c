@@ -62,9 +62,9 @@ char* ecsl_file_get_line_str(FILE* file, int line_n)
   // Set 'cursor' to the beginning of line_n.
   file_set_cursor_to_line(file, line_n);
   int length = file_get_line_length(file);
-  // Create a string large enough to contain the current line
+  // Create a string large enough to contain the current line.
   char* tmp_str = (char*)calloc(1,sizeof(char) * (length+1));
-  // Find length of current line
+  // Find length of current line.
   int i = 0;
   for (i = 0; i < length; i++)
   {
