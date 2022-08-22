@@ -35,7 +35,8 @@ int file_get_line_length(FILE* file, int line_n)
     char c = fgetc(file);
     if (c == EOF)
     {
-      printf("Error: file_get_line_length() has reached an invalid character or EOF.\n");
+      printf("Error: file_get_line_length() has reached an invalid character ");
+      printf("or EOF.\n");
     }
     else
     {
