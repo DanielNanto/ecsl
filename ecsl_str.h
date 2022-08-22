@@ -12,6 +12,9 @@
 //! \returns The length of the newly created array of integers, -1 if given invalid sting.
 extern int str_to_array(char* str, int** array);
 
+//! \brief Calculate how many elements are within a given "int array" string.
+//! \param str The char array to be examined
+//! \returns The or number of elements within a given "int array" string.
 extern int str_array_length(char* str);
 
 extern char* str_remove_spaces(char* str); 
