@@ -75,9 +75,9 @@ int str_to_array(char* str, int** array)
   }
   else
   {
-    printf("Error: str_to_array() cannot use convert given str to an array. The target ");
-    printf("str must begin with an '[' and end with an ']'. Each integer within the ");
-    printf("'array' needs to be separated by commas.\n");
+    printf("Error: str_to_array() cannot use convert given str to an array. ");
+    printf("The target str must begin with an '[' and end with an ']'. Each ");
+    printf("integer within the 'array' needs to be separated by commas.\n");
     length = -1;
   }
   return length;
