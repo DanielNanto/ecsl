@@ -51,7 +51,6 @@ int str_to_array(char* str, int** array)
     length = str_array_length(tmp_str);
     *array = (int*)realloc(*array, length * sizeof(int));
     memset(*array, 0, length * sizeof(int));
-    // This might be bad
     char* str_read = (char*)calloc(str_length, sizeof(char));
     int i = 0, j = 0, k = 0;
     for (i = 1; i < (str_length); i++)
