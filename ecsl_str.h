@@ -1,6 +1,10 @@
 #ifndef ECSL_STR_H_
 #define ECSL_STR_H_
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 //! \brief Calculate how many elements are within a given "int array" string.  
 //! \brief CAUTION: The given str must not contain spaces. Use str_remove_spaces() first.
 //! \param str The char array to be examined
