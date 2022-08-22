@@ -17,6 +17,11 @@ extern int str_to_array(char* str, int** array);
 //! \returns The or number of elements within a given "int array" string.
 extern int str_array_length(char* str);
 
+//! \brief Create a clone of a string, but exclude all spaces.  
+//! \brief WARNING: Please note that the 'str' argument will have memory allocated via
+//! \brief malloc(), and as such will need to be free'd manually.
+//! \param str The char array to be cleaned
+//! \returns The new string without spaces
 extern char* str_remove_spaces(char* str); 
 
 #endif
