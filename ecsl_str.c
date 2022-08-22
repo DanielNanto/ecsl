@@ -46,7 +46,6 @@ int str_to_array(char* str, int** array)
   int length = 0;
   char* tmp_str = str_remove_spaces(str);
   int str_length = strlen(tmp_str);
-  printf("tmp_str = %s\n", tmp_str);
   if (tmp_str[0] == '[' && tmp_str[str_length-1] == ']')
   {
     length = str_array_length(tmp_str);
