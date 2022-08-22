@@ -14,4 +14,6 @@ extern int str_to_array(char* str, int** array);
 
 extern int str_array_length(char* str);
 
+extern char* str_remove_spaces(char* str); 
+
 #endif
