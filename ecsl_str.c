@@ -24,7 +24,7 @@ char* str_remove_spaces(char* str)
 {
   char* str_1 = NULL;
   int str_length = strlen(str);
-  str_1 = (char*)calloc(sizeof(char), str_length);
+  str_1 = (char*)calloc(sizeof(char), str_length+1);
   int i = 0, j = 0;
   for (i = 0; i < str_length; i++)
   {
