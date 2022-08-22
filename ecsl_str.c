@@ -40,3 +40,45 @@ char* str_remove_spaces(char* str)
   }
   return str_1;
 }
+
+int str_to_array(char* str, int** array)
+{
+  int length = 0;
+  char* tmp_str = str_remove_spaces(str);
+  int str_length = strlen(tmp_str);
+  printf("tmp_str = %s\n", tmp_str);
+  if (tmp_str[0] == '[' && tmp_str[str_length-1] == ']')
+  {
+    length = str_array_length(tmp_str);
+    *array = (int*)realloc(*array, length * sizeof(int));
+    memset(*array, 0, length * sizeof(int));
+    // This might be bad
+    char* str_read = (char*)calloc(str_length, sizeof(char));
+    int i = 0, j = 0, k = 0;
+    for (i = 1; i < (str_length); i++)
+    {
+      if (tmp_str[i] == ',' || tmp_str[i] == ']')
+      {
+        (*array)[k] = atoi(str_read);
+        memset(str_read, 0, strlen(str_read) * sizeof(char));
+        ++k;
+        j = 0;
+      }
+      else
+      {
+        str_read[j] = tmp_str[i];
+        ++j;
+      }
+    }
+    free(tmp_str);
+    free(str_read);
+  }
+  else
+  {
+    printf("Error: str_to_array() cannot use convert given str to an array. The target ");
+    printf("str must begin with an '[' and end with an ']'. Each integer within the ");
+    printf("'array' needs to be separated by commas.\n");
+    length = -1;
+  }
+  return length;
+}
