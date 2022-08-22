@@ -1,6 +1,6 @@
 #include "ecsl_file.h"
 
-int ecsl_file_set_line(FILE* file, int dst_line_n)
+int file_set_line(FILE* file, int dst_line_n)
 {
   int errors = 0;
   // Set file position to the beginning (SEEK_SET) of the file.
@@ -18,24 +18,24 @@ int ecsl_file_set_line(FILE* file, int dst_line_n)
   }
   if (line_counter != dst_line_n)
   {
-    printf("Error: ecsl_file_set_line() unable to seek to desired line\n");
+    printf("Error: file_set_line() unable to seek to desired line\n");
     errors = 1;
   }
   return errors;
 }
 
-int ecsl_file_get_line_length(FILE* file, int line_n)
+int file_get_line_length(FILE* file, int line_n)
 {
   int length = 0;
   // Retrieve starting position.
   int starting_position = ftell(file);
   // Seek to the desired line.
-  if (ecsl_file_set_line(file, line_n) == 0)
+  if (file_set_line(file, line_n) == 0)
   {
     char c = fgetc(file);
     if (c == EOF)
     {
-      printf("Error: ecsl_file_get_line_length() has reached an invalid character or EOF.\n");
+      printf("Error: file_get_line_length() has reached an invalid character or EOF.\n");
     }
     else
     {
@@ -48,13 +48,13 @@ int ecsl_file_get_line_length(FILE* file, int line_n)
   }
   else
   {
-    printf("Error: ecsl_file_get_line_length() unable to find desired line.\n");
+    printf("Error: file_get_line_length() unable to find desired line.\n");
   }
   fseek(file, starting_position, SEEK_SET);
   return length;
 }
 
-char* ecsl_file_get_line_str(FILE* file, int line_n)
+char* file_get_line_str(FILE* file, int line_n)
 {
   int errors = 0;
   // Record the position of the 'cursor' before operating.
