@@ -12,4 +12,6 @@
 //! \returns The length of the newly created array of integers, -1 if given invalid sting.
 extern int str_to_array(char* str, int** array);
 
+extern int str_array_length(char* str);
+
 #endif
