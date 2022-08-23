@@ -27,7 +27,7 @@ extern char* file_get_line_str(FILE* file, int line_n);
 //! \brief Extract an integer value from a specific line of a given file.
 //! \param file The FILE* to extract an int from.
 //! \param line_n The line number.
-//! \returns the int value if successful, -1 if errors were encountered.
+//! \returns the int value if successful, 0 if 0, or if unable to aquire int.
 extern int file_get_line_int(FILE* file, int line_n);
 
 #endif
