@@ -74,3 +74,26 @@ char* file_get_line_str(FILE* file, int line_n)
   fseek(file, starting_position, SEEK_SET);
   return tmp_str;
 }
+
+int file_get_line_int(FILE* file, int line_n)
+{
+  int value = 0;
+  // Record the position of the 'cursor' before operating.
+  int starting_position = ftell(file);
+  // Set 'cursor' to the beginning of line_n.
+  file_set_line(file, line_n);
+  int length = file_get_line_length(file, line_n);
+  // Create a string large enough to contain the current line.
+  char* tmp_str = (char*)calloc(1,sizeof(char) * (length+1));
+  // Find length of current line.
+  int i = 0;
+  for (i = 0; i < length; i++)
+  {
+    tmp_str[i] = fgetc(file);
+  }
+  // Return the 'cursor' to the recorded position before this operation.
+  fseek(file, starting_position, SEEK_SET);
+  value = atoi(tmp_str);
+  free(tmp_str);
+  return value;
+}
