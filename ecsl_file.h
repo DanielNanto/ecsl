@@ -24,4 +24,6 @@ extern int file_get_line_length(FILE* file, int line_n);
 //! \returns The extracted string.
 extern char* file_get_line_str(FILE* file, int line_n);
 
+extern int file_get_line_int(FILE* file, int line_n);
+
 #endif
