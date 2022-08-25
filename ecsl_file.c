@@ -6,7 +6,7 @@ int file_set_line(FILE* file, int dst_line_n)
   // Set file position to the beginning (SEEK_SET) of the file.
   fseek(file, 0L, SEEK_SET);
   // Read through the file until  number of '\n' characters are read.
-  char c = '0';
+  signed char c = '0';
   int line_counter = 0;
   while(line_counter < dst_line_n && c != EOF)
   {
@@ -32,7 +32,7 @@ int file_get_line_length(FILE* file, int line_n)
   // Seek to the desired line.
   if (file_set_line(file, line_n) == 0)
   {
-    char c = fgetc(file);
+    signed char c = fgetc(file);
     if (c == EOF)
     {
       printf("Error: file_get_line_length() has reached an invalid character ");
