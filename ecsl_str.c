@@ -36,7 +36,13 @@ char* str_remove_spaces(char* str)
   }
   if (j != str_length)
   {
-    str_1 = (char*)realloc(str_1, j * sizeof(char)); // Trimming excess memory
+    char* str_2 = NULL;
+    str_2 = (char*)calloc(sizeof(char), j+1);
+    strcpy(str_2, str_1);
+    free(str_1);
+    str_1 = (char*)calloc(sizeof(char), j+1);
+    strcpy(str_1, str_2);
+    free(str_2);
   }
   return str_1;
 }
