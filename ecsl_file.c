@@ -45,7 +45,7 @@ int file_get_line_length(FILE* file, int line_n)
         c = fgetc(file);
         ++length;
       }
-    } 
+    }
   }
   else
   {
