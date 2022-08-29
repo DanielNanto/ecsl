@@ -1,6 +1,6 @@
 #include "ecsl_str.h"
 
-int str_array_length(char* str)
+int str_get_array_length(char* str)
 {
   // Note: expected str format: "[a,b,c]"
   int str_length = strlen(str);
@@ -54,7 +54,7 @@ int str_to_array(char* str, int** array)
   int str_length = strlen(tmp_str);
   if (tmp_str[0] == '[' && tmp_str[str_length-1] == ']')
   {
-    length = str_array_length(tmp_str);
+    length = str_get_array_length(tmp_str);
     *array = (int*)realloc(*array, length * sizeof(int));
     memset(*array, 0, length * sizeof(int));
     char* str_read = (char*)calloc(str_length, sizeof(char));

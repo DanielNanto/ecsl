@@ -9,7 +9,7 @@
 //! \brief CAUTION: The given str must not contain spaces. Use str_remove_spaces() first.
 //! \param str The char array to be examined
 //! \returns The or number of elements within a given "int array" string.
-extern int str_array_length(char* str);
+extern int str_get_array_length(char* str);
 
 //! \brief Create a clone of a string, but exclude all spaces.  
 //! \brief WARNING: Please note that the 'str' argument will have memory allocated via
