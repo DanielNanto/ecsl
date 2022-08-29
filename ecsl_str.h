@@ -16,7 +16,7 @@ extern int str_get_array_length(char* str);
 //! \brief malloc(), and as such will need to be free'd manually.
 //! \param str The char array to be cleaned
 //! \returns The new string without spaces
-extern char* str_remove_spaces(char* str); 
+extern char* str_remove_spaces(char* str);
 
 //! \brief Convert a string to an array of integers, and return the size of the array.  
 //! \brief CAUTION: If the given 'array' pointer previously pointed to memory allocated
@@ -28,5 +28,7 @@ extern char* str_remove_spaces(char* str);
 //! \param array A pointer to the int array to be realloc'd and populated.
 //! \returns The length of the newly created array of integers, -1 if given invalid sting.
 extern int str_to_array(char* str, int** array);
+
+extern char* array_to_str(int* array, int elements);
 
 #endif
