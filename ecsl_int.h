@@ -8,4 +8,6 @@
 //! \returns The number of digits within the provided integer.
 extern int int_get_digit_total(int n);
 
+extern int int_get_digit(int n, int digit_target);
+
 #endif
