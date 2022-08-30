@@ -109,3 +109,33 @@ char* int_to_str(int n)
   }
   return str_1;
 }
+
+char* array_to_str(int* array, int elements)
+{
+  char* str_1;
+  int total_size = 1; // For '['
+  int i;
+  // Calculate new string size first to avoid redundant calls to realloc().
+  for (i = 0; i < elements; i++)
+  {
+    total_size += int_get_digit_total(array[i]) + 1; // + 1 for ',' and ']'
+  }
+  str_1 = (char*)calloc(total_size + 1, sizeof(char));
+  str_1[0]='[';
+  // Warning: several memory allocation functions are called; consider revising.
+  for (i = 0; i < elements; i++)
+  {
+    char* str_tmp = int_to_str(array[i]);
+    strcat(str_1, str_tmp);
+    if ( i < elements - 1)
+    {
+      strcat(str_1, ",");
+    }
+    else
+    {
+      strcat(str_1, "]");
+    }
+    free(str_tmp);
+  }
+  return str_1;
+}
