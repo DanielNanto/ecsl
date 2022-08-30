@@ -90,18 +90,22 @@ int str_to_array(char* str, int** array)
 char* int_to_str(int n)
 {
   char* str_1;
-  int length = int_get_digit_total(n); // slow
-  length += (n < 0) ? 1 : 0; // if number is negative
+  int length = int_get_digit_total(n);
+  // Add a character for a negative sign, if needed.
+  length += (n < 0) ? 1 : 0;
   str_1 = (char*)calloc(length + 1, sizeof(char));
-  int i = 0, j = 1;
+  int i = 0;
   if (n < 0)
   {
     str_1[i] = '-';
     i = 1;
   }
-  for (i = i; i < length; i++, j++)
+  // Extract the digits starting with digit 1 (left to right)
+  int digit_target = 1;
+  for (; i < length; i++, digit_target++)
   {
-    str_1[i] = 48 + int_get_digit(n, j);
+    // TODO - Rewrite to avoid redundant calls to int_get_digit_total()
+    str_1[i] = 48 + int_get_digit(n, digit_target);
   }
   return str_1;
 }
