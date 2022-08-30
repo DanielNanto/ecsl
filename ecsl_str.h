@@ -31,6 +31,11 @@ extern char* str_remove_spaces(char* str);
 //! \returns The length of the newly created array of integers, -1 if given invalid sting.
 extern int str_to_array(char* str, int** array);
 
+//! \brief Convert a given signed integer to an array of characters.  
+//! \brief WARNING: Please note that the returned char* points to memory
+//! \brief allocated through calloc(), and as such needs to be free'd.
+//! \param n The integer to be converted.
+//! \returns The newly created string.
 extern char* int_to_str(int n);
 
 extern char* array_to_str(int* array, int elements);
