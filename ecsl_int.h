@@ -1,6 +1,7 @@
 #ifndef ECSL_INT_H_
 #define ECSL_INT_H_
 
+#include <stdio.h>
 #include <math.h>
 
 //! \brief Count the digits of a given integer.
