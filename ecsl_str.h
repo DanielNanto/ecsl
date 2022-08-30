@@ -29,6 +29,8 @@ extern char* str_remove_spaces(char* str);
 //! \returns The length of the newly created array of integers, -1 if given invalid sting.
 extern int str_to_array(char* str, int** array);
 
+extern char* int_to_str(int n);
+
 extern char* array_to_str(int* array, int elements);
 
 #endif
