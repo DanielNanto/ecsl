@@ -11,7 +11,8 @@ extern int int_get_digit_total(int n);
 //! \brief Retrieve the value at the requested digit of a given integer.
 //! \param n The integer to be evaluated.
 //! \param digit_target The desired digit counted from left to right.
-//! \returns The value stored at the requested digit of n.
+//! \returns The value at the requested digit of n if successful, -11 if
+//! \returns unable to read the desired digit.
 extern int int_get_digit(int n, int digit_target);
 
 #endif
