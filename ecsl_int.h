@@ -6,6 +6,6 @@
 //! \brief Count the digits of a given integer.
 //! \param n The int to be evaluated.
 //! \returns The number of digits within the provided integer.
-extern int int_get_length(int n);
+extern int int_get_digit_total(int n);
 
 #endif
