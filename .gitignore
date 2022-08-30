@@ -2,3 +2,4 @@ dev/
 *.o
 Makefile
 run.sh
+valgrind.sh
