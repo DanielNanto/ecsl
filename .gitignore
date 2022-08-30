@@ -1,2 +1,4 @@
 dev/
 *.o
+Makefile
+run.sh
