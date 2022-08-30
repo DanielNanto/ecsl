@@ -3,11 +3,18 @@
 int int_get_digit_total(int n)
 {
   int length = 0;
-  int n_tmp = n % (int)pow(10, length);
-  while (n_tmp != n)
+  if (n == 0)
   {
-    ++length;
-    n_tmp = n % (int)(pow(10, length));
+    length = 1;
+  }
+  else
+  {
+    int n_tmp = n % (int)pow(10, length);
+    while (n_tmp != n)
+    {
+      ++length;
+      n_tmp = n % (int)(pow(10, length));
+    }
   }
   return length;
 }
