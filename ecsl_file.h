@@ -26,7 +26,7 @@ extern char* file_get_line_str(FILE* file, int line_n);
 
 extern int file_set_line_str(FILE* file, int line_n, char* str);
 
-extern int file_put_line_str();
+extern int file_put_line_str(FILE* file, int line_n, char* str);
 
 //! \brief Extract an integer value from a specific line of a given file.
 //! \param file The FILE* to extract an int from.
