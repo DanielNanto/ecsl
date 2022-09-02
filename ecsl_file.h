@@ -32,4 +32,6 @@ extern int file_get_line_int(FILE* file, int line_n);
 
 extern int file_put_line_str();
 
+extern int file_set_line_str();
+
 #endif
