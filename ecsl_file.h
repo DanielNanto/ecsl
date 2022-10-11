@@ -30,9 +30,14 @@ extern char* file_get_line_str(FILE* file, int line_n);
 //! \returns the int value if successful, 0 if 0, or if unable to aquire int.
 extern int file_get_line_int(FILE* file, int line_n);
 
-extern int file_put_line_str(FILE*file, char* str, int line);
-extern int file_put_str_line(FILE*file, char* str, int line);
+extern int file_put_line_str(FILE* file, int line_n, char* str);
 
-extern int file_set_line_str();
+// The following functions have been temporarily delayed as they require
+// more dynamic file stream manipulation. 
+// #include <unistd.h>
+// Consider using ftruncate() to alter the file stream.
+// extern int file_remove_line(FILE* file, int line_n, char* str);
+// extern int file_clear_line(FILE* file, int line_n, char* str);
+// extern int file_set_line_str(FILE* file, int line_n, char* str);
 
 #endif
