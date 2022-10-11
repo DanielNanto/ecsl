@@ -38,6 +38,8 @@ extern int str_to_array(char* str, int** array);
 //! \returns The newly created string.
 extern char* int_to_str(int n);
 
+extern int str_to_int(int n);
+
 //! \brief Copy a given array of integers to a string.  
 //! \brief WARNING: Please note that the returned char* points to memory
 //! \brief allocated through calloc(), and as such needs to be free'd.
