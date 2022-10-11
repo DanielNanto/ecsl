@@ -38,7 +38,10 @@ extern int str_to_array(char* str, int** array);
 //! \returns The newly created string.
 extern char* int_to_str(int n);
 
-extern int str_to_int(int n);
+//! \brief Convert a given array of characters to a signed integer.  
+//! \param str The character array to be converted.
+//! \returns The newly created signed integer.
+extern int str_to_int(char* str);
 
 //! \brief Copy a given array of integers to a string.  
 //! \brief WARNING: Please note that the returned char* points to memory
