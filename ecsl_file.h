@@ -30,4 +30,9 @@ extern char* file_get_line_str(FILE* file, int line_n);
 //! \returns the int value if successful, 0 if 0, or if unable to aquire int.
 extern int file_get_line_int(FILE* file, int line_n);
 
+extern int file_put_line_str(FILE*file, char* str, int line);
+extern int file_put_str_line(FILE*file, char* str, int line);
+
+extern int file_set_line_str();
+
 #endif
