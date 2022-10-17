@@ -110,6 +110,34 @@ char* int_to_str(int n)
   return str_1;
 }
 
+int str_to_int(char* str)
+{
+  int n = 0;
+  int n_previous = 0;
+  int length = strlen(str);
+  int i;
+  for (i = 0; i < length; i++)
+  {
+    if (str[i] >= 48 && str[i] <= 57)
+    {
+      n_previous = n;
+      n += (str[i] - 48) * pow(10, length - 1 - i);
+      if (n_previous > n)
+      {
+        printf("Error: str_to_int(): string is larger than __INT_MAX__.\n");
+        n = 0;
+        i = length;
+      }
+    }
+  }
+  // Handle negative integers:
+  if (str[0] == '-')
+  {
+    n = n * -1;
+  }
+  return n;
+}
+
 char* array_to_str(int* array, int elements)
 {
   char* str_1;
@@ -139,3 +167,4 @@ char* array_to_str(int* array, int elements)
   }
   return str_1;
 }
+
