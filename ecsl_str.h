@@ -6,6 +6,7 @@
 #include <string.h>
 
 #include "ecsl_int.h"
+#include "ecsl_file.h"
 
 //! \brief Calculate how many elements are within a given "int array" string.  
 //! \brief CAUTION: The given str must not contain spaces. Use str_remove_spaces() first.
