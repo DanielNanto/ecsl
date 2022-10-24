@@ -93,7 +93,7 @@ int file_get_line_int(FILE* file, int line_n)
   }
   // Return the 'cursor' to the recorded position before this operation.
   fseek(file, starting_position, SEEK_SET);
-  value = atoi(tmp_str);
+  value = str_to_int(tmp_str);
   free(tmp_str);
   return value;
 }

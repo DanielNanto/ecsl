@@ -63,7 +63,7 @@ int str_to_array(char* str, int** array)
     {
       if (tmp_str[i] == ',' || tmp_str[i] == ']')
       {
-        (*array)[k] = atoi(str_read);
+        (*array)[k] = str_to_int(str_read);
         memset(str_read, 0, strlen(str_read) * sizeof(char));
         ++k;
         j = 0;
