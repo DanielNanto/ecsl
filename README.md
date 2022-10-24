@@ -1,3 +1,7 @@
-# ecsl
-Extended C Standard Library
-Strings, Files, Arrays
+# Extended C Standard Library (ecsl)
+Title:     ecsl
+<br />Author(s): Daniel Nanto
+<br />Company:   N/A
+<br />Date:      2022.8.10 (ISO 8601)
+<br />Standard:  JSF-AV C++ | Google C++
+<br />*Notes:    These are some functions I use to manipulate strings, files, and arrays.*
