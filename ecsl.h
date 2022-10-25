@@ -4,5 +4,6 @@
 #include "ecsl_int.h"
 #include "ecsl_str.h"
 #include "ecsl_file.h"
+#include "ecsl_time.h"
 
 #endif
