@@ -4,4 +4,4 @@ Title:     ecsl
 <br />Company:   N/A
 <br />Date:      2022.8.10 (ISO 8601)
 <br />Standard:  JSF-AV C++ | Google C++
-<br />*Notes:    These are some functions I use to manipulate strings, files, and arrays.*
+<br />*Notes:    These are some functions I use frequently enough to collect in one place*
