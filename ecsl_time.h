@@ -3,6 +3,12 @@
 
 #include <stdint.h>
 
+//! \brief Assess if a given 'period' of time has passed between the provided 
+//! \brief 'old' and 'new' times.  
+//! \param new The uint32_t 'new' time.
+//! \param old The uint32_t 'old' time.
+//! \param period The target period of time to be compared.
+//! \returns 1 if the target period of time has passed, 0 if not.
 int time_compare(uint32_t new,
                  uint32_t old,
                  uint32_t period);
