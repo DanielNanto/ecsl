@@ -116,12 +116,16 @@ int str_to_int(char* str)
   int n_previous;
   int length = strlen(str);
   int i;
+  // Extract each digit of the number (str) one at a time.
   for (i = 0; i < length; i++)
   {
+    // Verify that i char of the given str is a number:
     if (str[i] >= 48 && str[i] <= 57)
     {
       n_previous = n;
+      // Extract each number, then multiply to correct ten's place:
       n += (str[i] - 48) * pow(10, length - 1 - i);
+      // If n_previous is larger than n, n has exceeded the maximum int size:
       if (n_previous > n)
       {
         printf("Error: str_to_int(): string is larger than __INT_MAX__.\n");
