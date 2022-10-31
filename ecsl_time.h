@@ -9,8 +9,8 @@
 //! \param old The uint32_t 'old' time.
 //! \param period The target period of time to be compared.
 //! \returns 1 if the target period of time has passed, 0 if not.
-int time_compare(uint32_t new,
-                 uint32_t old,
+int time_compare(uint32_t time_new,
+                 uint32_t time_old,
                  uint32_t period);
 
 #endif
