@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "ecsl_str.h"
 
 //! \brief Seek to the start of a given line number within the provided file.
 //! \param file The FILE* to seek into.
