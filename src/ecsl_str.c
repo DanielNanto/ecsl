@@ -1,4 +1,4 @@
-#include "ecsl_str.h"
+#include "../include/ecsl_str.h"
 
 int str_get_array_length(char* str)
 {

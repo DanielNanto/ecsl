@@ -1,4 +1,4 @@
-#include "ecsl_int.h"
+#include "../include/ecsl_int.h"
 
 int int_get_digit_total(int n)
 {
