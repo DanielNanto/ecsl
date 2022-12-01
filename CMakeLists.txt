@@ -10,12 +10,10 @@ add_library(ecsl SHARED
             src/ecsl_str.c)
 
 set_target_properties(ecsl PROPERTIES VERSION ${PROJECT_VERSION})
-
 set_target_properties(ecsl PROPERTIES PUBLIC_HEADER include/ecsl.h)
 
-# target_include_directories(ecsl PRIVATE .)
-target_include_directories(ecsl PRIVATE include)
-target_include_directories(ecsl PRIVATE src)
+target_include_directories(ecsl PRIVATE include/)
+target_include_directories(ecsl PRIVATE src/)
 
 include(GNUInstallDirs)
 install(TARGETS ecsl
