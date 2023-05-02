@@ -24,7 +24,7 @@ char* str_remove_spaces(char* str)
 {
   char* str_1 = NULL;
   int str_length = strlen(str);
-  str_1 = (char*)calloc(sizeof(char), str_length+1);
+  str_1 = (char*)calloc(str_length + 1, sizeof(char));
   int i = 0, j = 0;
   for (i = 0; i < str_length; i++)
   {
@@ -37,10 +37,10 @@ char* str_remove_spaces(char* str)
   if (j != str_length)
   {
     char* str_2 = NULL;
-    str_2 = (char*)calloc(sizeof(char), j+1);
+    str_2 = (char*)calloc(j + 1, sizeof(char));
     strcpy(str_2, str_1);
     free(str_1);
-    str_1 = (char*)calloc(sizeof(char), j+1);
+    str_1 = (char*)calloc(j + 1, sizeof(char));
     strcpy(str_1, str_2);
     free(str_2);
   }
@@ -52,12 +52,12 @@ int str_to_array(char* str, int** array)
   int length = 0;
   char* tmp_str = str_remove_spaces(str);
   int str_length = strlen(tmp_str);
-  if (tmp_str[0] == '[' && tmp_str[str_length-1] == ']')
+  if (tmp_str[0] == '[' && tmp_str[str_length - 1] == ']')
   {
     length = str_get_array_length(tmp_str);
     *array = (int*)realloc(*array, length * sizeof(int));
     memset(*array, 0, length * sizeof(int));
-    char* str_read = (char*)calloc(str_length, sizeof(char));
+    char* str_read = (char*)calloc(str_length + 1, sizeof(char));
     int i = 0, j = 0, k = 0;
     for (i = 1; i < (str_length); i++)
     {

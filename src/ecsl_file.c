@@ -102,7 +102,7 @@ int file_get_line_int(FILE* file, int line_n)
   file_set_line(file, line_n);
   int length = file_get_line_length(file, line_n);
   // Create a string large enough to contain the current line.
-  char* tmp_str = (char*)calloc(1,sizeof(char) * (length+1));
+  char* tmp_str = (char*)calloc(length + 1, sizeof(char));
   // Find length of current line.
   int i = 0;
   for (i = 0; i < length; i++)
