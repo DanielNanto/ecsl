@@ -25,7 +25,7 @@ int int_get_digit_total(int n)
 //! \brief Retrieve the value at the requested digit of a given integer.
 //! \param n The integer to be evaluated.
 //! \param digit_target The desired digit counted from left to right.
-//! \returns The value at the requested digit of n if successful, -11 if
+//! \returns The value at the requested digit of n if successful, -1 if
 //! \returns unable to read the desired digit.
 int int_get_digit(int n, int digit_target)
 {
@@ -42,7 +42,7 @@ int int_get_digit(int n, int digit_target)
   else
   {
     printf("Error: Unable to read digit %d int_get_digit()\n", digit_target);
-    value = -11;
+    value = -1;
   }
   return value;
 }
