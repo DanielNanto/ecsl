@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.18.4)
 
-project(ecsl VERSION 1.0 DESCRIPTION "These are some functions I use frequently enough to collect in one place")
+project(ecsl VERSION 0.1.0 DESCRIPTION "These are some functions I use frequently enough to collect in one place")
 
 add_library(ecsl SHARED
             src/ecsl_file.c
