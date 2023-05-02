@@ -1,5 +1,9 @@
 #include "../include/ecsl_file.h"
 
+//! \brief Seek to the start of a given line number within the provided file.
+//! \param file The FILE* to seek into.
+//! \param line_n The line number requested to seek to.
+//! \returns 0 if successful, 1 if unable to seek to the desired line. 
 int file_set_line(FILE* file, int dst_line_n)
 {
   int errors = 0;
@@ -24,6 +28,10 @@ int file_set_line(FILE* file, int dst_line_n)
   return errors;
 }
 
+//! \brief Find the character length of a given line within the provided file.
+//! \param file The FILE* to evaluate.
+//! \param line_n The line number of a FILE* to be evaluated.
+//! \returns The length of desired line.
 int file_get_line_length(FILE* file, int line_n)
 {
   int length = 0;
@@ -38,7 +46,7 @@ int file_get_line_length(FILE* file, int line_n)
       printf("Error: file_get_line_length() has reached an invalid character ");
       printf("or EOF.\n");
     }
-    else
+    elsea
     {
       while(c != EOF && c != '\n')
       {
@@ -55,6 +63,12 @@ int file_get_line_length(FILE* file, int line_n)
   return length;
 }
 
+//! \brief Extract a string from the given line of a provided file.
+//! \brief WARNING: Please note that the returned char* points to memory
+//! \brief allocated through calloc(), and as such needs to be free'd.
+//! \param file The FILE* to evaluate.
+//! \param line_n The line number of a FILE* to be read.
+//! \returns The extracted string.
 char* file_get_line_str(FILE* file, int line_n)
 {
   // Record the position of the 'cursor' before operating.
@@ -75,6 +89,10 @@ char* file_get_line_str(FILE* file, int line_n)
   return tmp_str;
 }
 
+//! \brief Extract an integer value from a specific line of a given file.
+//! \param file The FILE* to extract an int from.
+//! \param line_n The line number.
+//! \returns the int value if successful, 0 if 0, or if unable to aquire int.
 int file_get_line_int(FILE* file, int line_n)
 {
   int value = 0;
