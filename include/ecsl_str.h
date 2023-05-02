@@ -12,7 +12,6 @@ extern int str_get_array_length(char* str);
 
 extern char* str_remove_spaces(char* str);
 
-
 extern int str_to_array(char* str, int** array);
 
 extern char* int_to_str(int n);
