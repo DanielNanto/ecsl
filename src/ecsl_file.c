@@ -46,7 +46,7 @@ int file_get_line_length(FILE* file, int line_n)
       printf("Error: file_get_line_length() has reached an invalid character ");
       printf("or EOF.\n");
     }
-    elsea
+    else
     {
       while(c != EOF && c != '\n')
       {
