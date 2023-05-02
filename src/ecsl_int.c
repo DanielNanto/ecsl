@@ -1,5 +1,8 @@
 #include "../include/ecsl_int.h"
 
+//! \brief Count the digits of a given integer.
+//! \param n The int to be evaluated.
+//! \returns The number of digits within the provided integer.
 int int_get_digit_total(int n)
 {
   int length = 0;
@@ -19,6 +22,11 @@ int int_get_digit_total(int n)
   return length;
 }
 
+//! \brief Retrieve the value at the requested digit of a given integer.
+//! \param n The integer to be evaluated.
+//! \param digit_target The desired digit counted from left to right.
+//! \returns The value at the requested digit of n if successful, -11 if
+//! \returns unable to read the desired digit.
 int int_get_digit(int n, int digit_target)
 {
   int value = 0;
