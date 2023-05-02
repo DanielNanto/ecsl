@@ -64,11 +64,11 @@ int file_get_line_length(FILE* file, int line_n)
 }
 
 //! \brief Extract a string from the given line of a provided file.
-//! \brief WARNING: Please note that the returned char* points to memory
-//! \brief allocated through calloc(), and as such needs to be free'd.
 //! \param file The FILE* to evaluate.
 //! \param line_n The line number of a FILE* to be read.
 //! \returns The extracted string.
+//! \warning Please note that the returned char* points to memory
+//! \warning allocated through calloc(), and as such needs to be free'd.
 char* file_get_line_str(FILE* file, int line_n)
 {
   // Record the position of the 'cursor' before operating.
